@@ -1,10 +1,9 @@
 package ru.netology.javaqa.radio;
 
 public class Radio {
-    public int currentRadioStationNumber;
+    private int currentRadioStationNumber;
 
     public void setToMaxStationNumber() {
-
         currentRadioStationNumber = 9;
     }
 
@@ -13,7 +12,7 @@ public class Radio {
     }
 
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
-        if (newCurrentRadioStationNumber <= 0) {
+        if (newCurrentRadioStationNumber < 0) {
             return;
         }
         if (newCurrentRadioStationNumber > 9) {
@@ -38,25 +37,17 @@ public class Radio {
         }
     }
 
-    public int soundVolume;
+    private int soundVolume;
 
     public void setToMaxVolume() {
         soundVolume = 100;
     }
 
     public int getSoundVolume() {
-
         return soundVolume;
     }
 
     public void setSoundVolume(int newSoundVolume) {
-        if (newSoundVolume < 0) {
-            return;
-        }
-        if (newSoundVolume > 100) {
-            return;
-        }
-
 
         soundVolume = newSoundVolume;
     }
