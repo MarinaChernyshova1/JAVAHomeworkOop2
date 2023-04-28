@@ -36,11 +36,11 @@ public class RadioTest {
     @Test
     public void shouldChoiceRadioStationOutOfRange() {
         Radio radio = new Radio();
+
         radio.setCurrentRadioStationNumber(12);
 
-        radio.setToMaxStationNumber();
 
-        int expected = 9;
+        int expected = 0;
         int actual = radio.getCurrentRadioStationNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -96,7 +96,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setSoundVolume(100);
 
-        radio.setToMaxVolume();
+
         radio.increaseVolume();
 
         int expected = 100;
