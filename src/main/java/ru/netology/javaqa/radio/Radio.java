@@ -2,14 +2,16 @@ package ru.netology.javaqa.radio;
 
 public class Radio {
     private int currentRadioStationNumber;
+    private int maxStation;
 
+    public Radio() {
+        this.maxStation = 9;
+    }
 
-    public void setToMaxStationNumber() {
-        currentRadioStationNumber = 9;
+    public Radio(int numberOfStation) {
+        this.maxStation = numberOfStation - 1;
     }
-    public void setToMinStation(){
-        currentRadioStationNumber = 0;
-    }
+
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
@@ -19,14 +21,14 @@ public class Radio {
         if (newCurrentRadioStationNumber < 0) {
             return;
         }
-        if (newCurrentRadioStationNumber > 9) {
+        if (newCurrentRadioStationNumber > maxStation) {
             return;
         }
         currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 
     public void switchRadioStationForward() {
-        if (currentRadioStationNumber < 9) {
+        if (currentRadioStationNumber < maxStation) {
             currentRadioStationNumber = currentRadioStationNumber + 1;
         } else {
             currentRadioStationNumber = 0;
@@ -37,7 +39,7 @@ public class Radio {
         if (currentRadioStationNumber > 0) {
             currentRadioStationNumber = currentRadioStationNumber - 1;
         } else {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = maxStation;
         }
     }
 
