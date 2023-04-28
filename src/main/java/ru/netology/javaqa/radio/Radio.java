@@ -3,8 +3,12 @@ package ru.netology.javaqa.radio;
 public class Radio {
     private int currentRadioStationNumber;
 
+
     public void setToMaxStationNumber() {
         currentRadioStationNumber = 9;
+    }
+    public void setToMinStation(){
+        currentRadioStationNumber = 0;
     }
 
     public int getCurrentRadioStationNumber() {
